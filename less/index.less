@@ -1,0 +1,326 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {.oswald-sans-serif;
+
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+/*------ Start your code here: ------*/
+@import "master.less";
+
+html {
+	font-size: 62.5%;
+}
+
+.container {.container-mixin;}
+
+/*-------------- HEADER --------------*/
+header {.header;}
+
+
+/*-------- H1, H2, P --------*/
+h1 {.h1;}
+h2 {.h2;}
+p {.p;}
+h1, p, h2 {margin: @margin1;}
+
+/*--------  BUTTONS --------*/
+main button, footer button {.main-footer-button;}
+footer button {.footer-button;}
+main button:hover, .offers button:hover, .insurance button:hover, footer button:hover {.button-hover;}
+
+
+.offers button, .insurance button {
+	background-color: @thirdColor;
+	color:@black;
+	margin: @margin15;
+}
+
+.offers button, h2, .insurance button, h2 {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+
+figure.bikes button, figure.buy button {margin-bottom: 5%;}
+
+
+
+
+/*-------------- MAIN --------------*/
+main figure.hero {
+	width: @full-size; 
+	.no-padding-margin;
+	img {width: @full-size; margin: @margin;}
+}
+
+
+/*--------MAIN DIV BIKE OPTION LINKS --------*/
+main div#links {
+	.oswald-sans-serif;
+	font-weight: 500;
+	a:hover {color: @secColor;}
+	a:last-child {border-right: none;}
+}
+
+
+/*-------- MAIN DIV STREAM --------*/
+.streamContainer {
+	padding-top: 5%;
+	padding-bottom: @padding-2;
+	#description-box{padding: @padding-2 20% @padding-3 0;}
+	#image-box {.flex; .figcaption; img {width: @full-size;}}
+}
+
+
+/*-------- MAIN DIV DELIVERY --------*/
+.deliveryContainer {
+	padding-top: @padding-2;
+	padding-bottom: 5%;
+	#description-box {padding: @padding-3 0; padding-left: 20%; text-align: right;}
+	#image-box {.flex; .figcaption; img {width: @full-size;}}
+}
+
+
+/*-------- MAIN DIV OFFERS & INSURANCE --------*/
+.offersContainer, .insuranceContainer {
+	border: 1px solid @primaryColor;
+	background-color: @primaryColor;
+	color: @white;
+	padding: 1% 0;
+	contain: content;
+	text-align: center;
+	vertical-align: baseline;
+}
+
+
+/*-------- MAIN DIV NEW & MERCH --------*/
+.merchContainer {background-color: @fourthColor;}
+
+.newContainer, .merchContainer {
+	padding: .5rem @padding-2;
+	p {max-width: 340px;}
+}
+
+
+/*-------- MAIN DIV BIKES & BUY --------*/
+.bikeContainer, .buyContainer {
+
+	figure.bikes, figure.buy {
+		span {font-size: @largeRem; font-weight: 500; .uppercase;}
+		img {width: @full-size; margin-bottom: @padding-3;}
+	}
+}
+
+
+/*-------- FOOTER --------*/
+footer {.footer; margin-top: 0;}
+
+
+
+
+// BREAKPOINTS
+  /*---------------------DESKTOP ---------------------*/
+  @media @min770 {
+
+	/*------ NAVIGATION ------*/
+	nav {.desktopNav;}
+
+
+	/*------ MAIN DIV LINKS ------*/
+	main div#links {.main-div-links;}
+
+
+	/*------ MAIN DIV STREAM & DELIVERY ------*/
+	.streamContainer, .deliveryContainer {  
+		background-color: @fourthColor;
+		.gridContainer;
+		grid-template-columns: 1fr 1fr;
+	} 
+	
+
+	.deliveryContainer {
+		padding-bottom: 2rem;
+		p {text-align: left;}
+    }
+    
+    .bikeContainer, .buyContainer {
+		.gridContainer;
+		grid-template-columns: 1fr 1fr 1fr;
+
+        figure.bikes, figure.buy {   
+            width: @full-size;
+            margin: 1%;
+            span {font-size: @largeRem; font-weight: 500;.uppercase;}
+            img {width: @full-size; margin-bottom: @padding-3;}
+        }
+    }
+}
+
+
+
+/*---------------------Tablet ---------------------*/
+@media @max769 {
+    @media @min501 {
+
+/*------ NAVIGATION ------*/
+	nav {.tabletNav;}
+
+	
+	/*------ MAIN DIV LINKS ------*/
+
+	main div#links {
+		.main-div-links;
+		a {font-weight: 500;}
+	}
+
+
+	/*------ MAIN DIV STREAM & DELIVERY ------*/
+
+	.streamContainer, .deliveryContainer {  
+		background-color: @fourthColor;
+		.gridContainer;
+        margin: @margin;
+		grid-template-columns: 1fr;
+
+        #description-box { 
+            padding: @padding-2;
+            width: 68%;
+            margin: @margin;  
+		}
+	} 
+	
+	.deliveryContainer {
+		background-color: @fourthColor;
+        #image-box {order:1;}
+        #description-box {order: 2; text-align: left;}
+	}
+
+	
+
+/*----- NEW BIKES AND MERCH -----*/
+	.bikeContainer figure.bikes, .buyContainer figure.buy {
+		.displayBlock;
+		margin: 0 auto;
+		padding-top: 3rem;
+		width: 80%;
+
+		figure.bikes, figure.buy {
+			width: 330px;
+			margin: @margin2;
+		}
+
+		figcaption p {min-width: @full-size;}
+	}
+	
+
+/*------ FOOTER ------*/
+	footer {.tablet-footer}
+
+}
+}
+
+
+
+/*--------------------- MOBILE ---------------------*/
+@media @max500{
+
+	/*------ NAVIGATION ------*/
+	nav {.mobileNav;}
+	
+	
+	/*------ MAIN DIVS SECTION ------*/
+	main div#links {
+		.main-div-links;
+		padding: 4% 2rem;
+		a {font-weight: 500; padding: .7rem @padding-3;}
+	}
+
+	/*------ STREAM & DELIVERY ------*/
+	.streamContainer, .deliveryContainer {  
+		background-color: @fourthColor;
+		.inlineBlock;
+		grid-template-columns: 1fr 1fr;
+		#description-box {text-align: left; padding: 0; margin: 0;}
+	}  
+
+	/*------ DELIVERY ------*/
+	.deliveryContainer {
+		.flex;
+		flex-direction: column;
+		padding-bottom: 10%;
+		#description-box {order: 2; margin-top: 0; padding-top: 0;}
+		#image-box {order: 1; margin-top: 1rem; margin-bottom: 0;}
+	}	
+
+
+	/*----- NEW BIKES AND MERCH -----*/
+	.bikeContainer figure.bikes, .buyContainer figure.buy {
+		.displayBlock;
+		figure.bikes, figure.buy {width: 400px; margin: @margin2;}
+	}
+
+	.merchContainer {background-color: @fourthColor}
+	
+
+	/*-------FOOTER -------*/
+	footer {.mobile-footer;}
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+  }

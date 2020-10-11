@@ -1,0 +1,316 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {.oswald-sans-serif;
+
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+/*------ Start your code here: ------*/
+@import "master.less";
+
+html {
+	font-size: 62.5%;
+}
+
+.container {.container-mixin;}
+
+/*-------------- HEADER --------------*/
+header {.header;}
+
+
+/*-------- H1, H2, P --------*/
+h1 {.h1;}
+h2 {.h2;}
+p {.p;}
+h1, p, h2 {margin: @margin1;}
+
+
+/*--------  BUTTONS --------*/
+main button, footer button {.main-footer-button;}
+footer button {.footer-button;}
+footer button:hover, main button:hover {.button-hover;}
+
+
+/*-------------- MAIN --------------*/
+main {min-height: 300px; padding: 5% 0;}
+
+main figure.hero {
+	width: @full-size; 
+	.no-padding-margin;
+	img {width: @full-size; margin: @margin;}
+}
+
+main {
+	h3 {color: @black; margin-top: 4%; padding-bottom: @padding-1; padding-left: @padding-1; font-size: @mediumRem;}
+
+    .content{
+        width: 55%;
+        margin: @margin;
+		padding: @padding-2;
+		
+
+    .input{
+		contain: content;
+		
+        #email, #fName, #lName {
+			display: block;
+            margin: 0 auto;
+            padding-left: @padding-2;
+            width: 97%;
+            height: 50px;
+            border: 1px solid @primaryColor;
+            border-radius: 5px;
+            font-size: @mediumRem;
+		}
+	}
+
+
+	h2 {margin-top: 2.5rem;}
+
+    .select {
+        margin-top: @padding-2;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        
+        #month, #day, #year {
+            margin: @margin;
+            font-size: @mediumRem;
+            justify-content: center;
+            width: 40%;
+            height: 40px;
+            margin-right: 4%;
+            padding-left: @padding-2;
+            border: 1px solid @primaryColor;
+			border-radius: 5px;
+		}
+
+        #month{height: 44px;}
+        #year {margin-right: 0;}
+    }
+
+
+    ::placeholder {
+        color: @gray;
+    }
+    }
+
+
+    .agreement {
+		margin: auto;
+		margin-top: 4%;
+		font-size: @smallRem;
+		.open-sans-serif;
+
+		span {
+			text-decoration: underline;
+			color: @secColor;
+		}	
+	}
+
+	.terms {
+		display: inline-block;
+		position: relative;
+		padding-left: 35px;
+		margin-bottom: 12px;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		input {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 0;
+			width: 0;
+		}
+	}
+
+	.checkmark {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 25px;
+		width: 25px;
+		background-color: @thirdColor;
+		border: 1px solid @black;
+		border-radius: 5px;
+	  }
+
+	  .terms:hover input ~ .checkmark {
+		background-color: @fourthColor;
+	  }
+
+	  .terms input:checked ~ .checkmark {
+		background-color: @secColor;
+	  }
+
+		.terms input:checked ~ .checkmark:after {
+			content: "✓";
+			color: @white;
+			font-size: 22px;
+			padding: 0 .5rem;
+			display: block;
+		}
+	
+		
+		.button {
+			margin: 0 auto;
+			.flex;
+
+			.userbutton {
+				background-color: @primaryColor;
+				color: @white;
+				font-size: @mediumRem;
+				.open-sans-serif;
+				.uppercase;
+				font-weight: 800;
+				padding: 1.5rem 4.5rem;
+			}
+
+			.userbutton:hover {
+				background-color: @secColor;
+				color:@white;
+				cursor: pointer;
+			}
+		}
+}
+
+
+/*-------- FOOTER --------*/
+footer {.footer; margin-top: 0;}
+
+
+
+
+
+// BREAKPOINTS
+  /*---------------------DESKTOP ---------------------*/
+  @media @min770 {
+
+	/*------ NAVIGATION ------*/
+	nav {.desktopNav;}
+    
+}
+
+
+
+/*---------------------Tablet ---------------------*/
+@media @max769 {
+    @media @min501 {
+
+/*------ NAVIGATION ------*/
+	nav {.tabletNav;}
+    
+
+/*------ MAIN ------*/
+    main .content{width: 90%;}
+	
+
+/*------ FOOTER ------*/
+	footer {.tablet-footer}
+}
+}
+
+
+
+/*--------------------- MOBILE ---------------------*/
+@media @max500{
+
+	/*------ NAVIGATION ------*/
+	nav {.mobileNav;}
+
+        /*------ MAIN ------*/
+        main .content{
+            width: 90%;
+
+            .input{
+
+                #email, #fName, #lName {width: 96.7%;}
+            }
+
+            .select {
+                display: inline-block;
+                width: @full-size;
+                margin-bottom: 5%;
+                
+                #month, #day, #year {
+                    display: inline-block;
+                    margin: 0 auto;
+                    margin-top: 4%;
+                    margin-left: 0;
+                    margin-right: 0;
+                    width:98%;
+                    border: 1px solid @primaryColor;
+                    border-radius: 5px;
+                    font-size: @mediumRem;
+                }
+    
+                #month{width: 100.9%;}
+            }
+        }
+    
+
+	/*-------FOOTER -------*/
+	footer {.mobile-footer;}
+}
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
