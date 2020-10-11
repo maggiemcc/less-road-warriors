@@ -1,0 +1,300 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+	font-family: 'Oswald', sans-serif;
+}
+
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Start your code here: */
+@import "master.less";
+
+html {
+	font-size: 62.5%;
+}
+
+.container {.container-mixin;}
+
+/*-------------- HEADER --------------*/
+header {.header;}
+
+
+/*-------------- H1, H2, P --------------*/
+h1 {.h1;}
+h2 {.h2;}
+p {.p;}
+
+h1, p {margin: 1.5rem 0 .5rem 0;}
+h2 {margin: 1.5rem 0 .5rem 0;}
+
+/*--------------  BUTTONS -------------- */
+main button, footer button {.main-footer-button;}
+footer button {.footer-button;}
+main button:hover, footer button:hover {.button-hover;}
+figure.buy button {margin-bottom: 5%;}
+
+
+
+/*-------------- MAIN --------------*/
+main figure.hero {
+	width: @full-size; 
+	.no-padding-margin;
+	img {width: @full-size; margin: @margin;}
+}
+
+.exploreContainer, .newContainer, .electricContainer #image-box, .electricContainer #description-box {padding: .5rem 0;}
+
+
+.electricContainer {
+	padding-top: 5%;
+	padding-bottom: @padding-2;
+	#description-box{padding: @padding-2 20% @padding-3 0;}
+	#image-box {.flex; .figcaption; img {width: @full-size;}}
+}
+
+.exploreContainer{background-color: @fourthColor;}
+
+.newContainer, .exploreContainer {
+	padding: .5rem @padding-2;
+	p {max-width: 340px;}
+
+	.bikeContainer, .twenty-twentyContainer {
+		figure.bikes {
+			span {font-size: @largeRem; font-weight: 500; .uppercase;}
+			img {width: @full-size; margin-bottom: @padding-3;}
+		}
+	}
+}
+
+
+
+/*-------------- FOOTER --------------*/
+footer {.footer; margin-top: 0;}
+
+
+
+
+
+// BREAKPOINTS
+  /*-------------- DESKTOP --------------*/
+  @media @min770 {
+
+	/*------ DESKTOP ------*/
+
+	nav {.desktopNav;}
+
+	/*------ HERO ------*/
+		main .heroBikes {
+			background-color: @primaryColor;
+			color:@white;
+
+			contain: content;
+			display: grid;
+			grid-template-columns: 40% auto;
+			grid-gap: 2px;
+
+			.heroText {
+				margin: auto;
+				width: 60%;
+				padding: 10px;
+			}
+		}
+
+
+	/*------ MAIN DIV STREAM ------*/
+	.electricContainer {  
+		background-color: @fourthColor;
+		.gridContainer;
+		grid-template-columns: 1fr 1fr;
+	} 
+
+	.bikeContainer {
+		.gridContainer;
+		grid-template-columns: 1fr 1fr 1fr;
+
+        figure.bikes {   
+            width: @full-size;
+            margin: 1%;
+            span {font-size: @largeRem; font-weight: 500;.uppercase;}
+            img {width: @full-size; margin-bottom: @padding-3;}
+        }
+	}
+	
+	.twenty-twentyContainer {
+		.gridContainer;
+		grid-template-columns: 1fr 1fr;
+
+        figure.bikes {   
+            width: @full-size;
+            margin: 1%;
+            span {font-size: @largeRem; font-weight: 500;.uppercase;}
+            img {width: @full-size; margin-bottom: @padding-3;}
+        }
+    }
+	
+} /*-------END OF DESKTOP -------*/
+
+
+
+/*-------------- Tablet --------------*/
+@media @max769 {
+	@media @min501 {
+
+
+	/*------ NAVIGATION ------*/
+	nav {.tabletNav;}
+
+
+	/*------ HERO ------*/
+	main .heroBikes {
+		background-color: @primaryColor;
+		color:@white;
+
+		contain: content;
+			display: grid;
+			grid-template-columns: 1 / span 2;
+			grid-gap: 20px;
+
+		.heroText {
+			margin: auto;
+			text-align: center;
+			padding: 6% 0;
+		}
+	}
+
+
+	.electricContainer {
+		background-color: @fourthColor;
+		.gridContainer;
+        margin: @margin;
+		grid-template-columns: 1fr;
+
+        #description-box { 
+            padding: @padding-2;
+            width: 68%;
+            margin: @margin;  
+		}
+	} 
+
+
+	.bikeContainer figure.bikes, .twenty-twentyContainer figure.bikes {
+		.displayBlock;
+		margin: 0 auto;
+		padding-top: 3rem;
+		width: 80%;
+
+		figure.bikes, figure.buy {
+			width: 330px;
+			margin: @margin2;
+		}
+
+		figcaption p {min-width: @full-size;}
+	}
+
+
+	/*------ FOOTER ------*/
+
+	footer {.tablet-footer}
+
+	} 
+}/*-------END OF TABLET -------*/
+
+
+
+
+/*-------------- MOBILE --------------*/
+  @media @max500 {
+
+	/*------ NAVIGATION ------*/
+	nav {.mobileNav;}
+
+		/*------ HERO ------*/
+		main .heroBikes {
+			background-color: @primaryColor;
+			color: @white;
+
+			contain: content;
+			display: grid;
+			grid-template-columns: 1 / span 2;
+			grid-gap: 20px;
+
+			.heroText {
+				margin: auto;
+				padding: 6% 0;
+				text-align: center;
+			}	
+		}
+
+	/*------ ELECTRIC------*/
+	.electricContainer {  
+		background-color: @fourthColor;
+		.inlineBlock;
+		grid-template-columns: 1fr 1fr;
+		#description-box {text-align: left; padding: 0; margin: 0;}
+	}  
+
+
+	.bikeContainer figure.bikes, .twenty-twentyContainer figure.bikes {
+		.displayBlock;
+		figure.bikes, figure.buy {width: 400px; margin: @margin2;}
+	}
+
+
+	/*-------FOOTER -------*/
+	footer {.mobile-footer;}
+} /*------- END OF MOBILE -------*/
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
