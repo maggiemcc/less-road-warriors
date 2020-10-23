@@ -96,7 +96,7 @@ main figure.hero {
 .electricContainer {
 	padding-top: 5%;
 	padding-bottom: @padding-2;
-	#description-box{padding: @padding-2 20% @padding-3 0;}
+	#description-box{padding: @padding-2 20% @padding-3 @padding-0;}
 	#image-box {.flex; .figcaption; img {width: @full-size;}}
 }
 
@@ -206,7 +206,7 @@ footer {.footer; margin-top: 0;}
 		.heroText {
 			margin: auto;
 			text-align: center;
-			padding: 6% 0;
+			padding: 6% @padding-0;
 		}
 	}
 
@@ -268,7 +268,7 @@ footer {.footer; margin-top: 0;}
 
 			.heroText {
 				margin: auto;
-				padding: 6% 0;
+				padding: 6% @padding-0;
 				text-align: center;
 			}	
 		}
@@ -278,7 +278,7 @@ footer {.footer; margin-top: 0;}
 		background-color: @fourthColor;
 		.inlineBlock;
 		grid-template-columns: 1fr 1fr;
-		#description-box {text-align: left; padding: 0; margin: 0;}
+		#description-box {text-align: left; padding: @padding-0; margin: 0;}
 	}  
 
 
