@@ -8,18 +8,18 @@
 
 
 /* MASTERS */
-@import "/website/LESS/escaping.less";
+@import "/LESS/escaping.less";
 
-@import "/website/LESS/variables.less";
+@import "/LESS/variables.less";
 
-@import "/website/LESS/mixins.less";
+@import "/LESS/mixins.less";
 
 
 /* INDIVIDUAL PAGE LESS FILES */
-@import "/website/LESS/index.less";
+@import "/LESS/index.less";
 
-@import "/website/LESS/bikes.less";
+@import "/LESS/bikes.less";
 
-@import "/website/LESS/signup.less";
+@import "/LESS/signup.less";
 
-@import "/website/LESS/thanks.less";
+@import "/LESS/thanks.less";
