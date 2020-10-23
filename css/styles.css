@@ -8,11 +8,11 @@
 
 
 /* MASTERS */
-@import "/LESS/escaping.less";
+@import "/master-LESS/escaping.less";
 
-@import "/LESS/variables.less";
+@import "/master-LESS/variables.less";
 
-@import "/LESS/mixins.less";
+@import "/master-LESS/mixins.less";
 
 
 /* INDIVIDUAL PAGE LESS FILES */
