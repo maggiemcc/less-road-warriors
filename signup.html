@@ -42,7 +42,7 @@
         <p>Sign up to receive promotional email about new products, events, and news from Road Warriors.</p>
 		</div>
 		
-		<form action="https://mm-less-road-warriors.netlify.app/thanks.html" method="get" enctype="multipart/form-data" name="attend" class="riding">
+		<form action="https://mm-less-road-warriors.netlify.app/thanks.html" method="get" enctype="multipart/form-data" name="attend"  onsubmit="return checkForm(this);">
 
         <div class="input">
 			<h3>Email*</h3>
@@ -77,15 +77,15 @@
 		
 		<div class="agreement">
 		<label class="terms">By checking this box, I confirm that I have read and agree to the <span>Terms of Use</span> and <span>Privacy Policy</span>.
-			<input type="checkbox" name="check" id="checkbox" required>
+			<input type="checkbox" name="terms" id="checkbox">
 			<span type="submit" class="checkmark"></span>
 		</label>
 		</div>
 		
 		<div class="button">
 			<input type="submit" name="submit" value="Sign Me Up!" class="userbutton"> 
-			<input type="hidden" name="subject" value="Ride Registration">
-			<input type="hidden" name="redirect" value="Ride Registration">
+			<input type="hidden" name="subject" value="Registration">
+			<input type="hidden" name="redirect" value="Registration">
 		</div>
 
 	</form>
@@ -149,6 +149,21 @@
 
 		<p>&copy; Maggie McCausland 2020</p>
 		</footer>
+
+
+		
+		<script>
+			function checkForm(form)
+			{
+			  if(!form.terms.checked) {
+				alert("Please indicate that you have read and agree to the Terms of Use and Privacy Policy.");
+				form.terms.focus();
+				return false;
+			  }
+			  return true;
+			}
+		  
+		  </script>
 		
 </body>
 </html>
