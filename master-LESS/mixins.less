@@ -8,11 +8,31 @@
 }
 
 /*-----  TEXT MIXINS ----- */
-.h1 {font-size: @largestRem; .oswald-sans-serif; font-weight: 700; .uppercase;}
-.h2 {font-size: @largeRem; .oswald-sans-serif; font-weight: 500; text-transform: none;}
-.p {font-size: @smallRem; .open-sans-serif; font-weight: 400; line-height: 1.8rem;}
+.font-stack {
+	h1 {
+		font-size: @largestRem;
+		.oswald-sans-serif;
+		font-weight: 700;
+		.uppercase;
+	}
+
+	h2 {
+		font-size: @largeRem;
+		.oswald-sans-serif;
+		font-weight: 500;
+		text-transform: none;
+	}
+
+	p {
+		font-size: @smallRem;
+		.open-sans-serif;
+		font-weight: 400;
+		line-height: 1.8rem;
+	}
+}
 
 /*-----  BUTTON MIXINS ----- */
+
 .main-footer-button {
 	background-color: @primaryColor;
 	color: @white;
@@ -26,6 +46,14 @@
 
 .footer-button {background-color: @thirdColor; color: @black; margin: @margin15;}
 .button-hover {background-color: @secColor; color:@white; cursor: pointer;}
+
+.button-stack {
+	main button, footer button {.main-footer-button;}
+	footer button {.footer-button;}
+	main button:hover, .offers button:hover, .insurance button:hover, footer button:hover {.button-hover;}
+}
+
+
 
 
 /*-----  MAIN MIXINS ----- */

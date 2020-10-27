@@ -32,7 +32,6 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	font-family: 'Oswald', sans-serif;
 }
 
 ol, ul {
@@ -67,18 +66,8 @@ html {
 header {.header;}
 
 
-/*-------------- H1, H2, P --------------*/
-h1 {.h1;}
-h2 {.h2;}
-p {.p;}
-
-h1, p {margin: 1.5rem 0 .5rem 0;}
-h2 {margin: 1.5rem 0 .5rem 0;}
-
-/*--------------  BUTTONS -------------- */
-main button, footer button {.main-footer-button;}
-footer button {.footer-button;}
-main button:hover, footer button:hover {.button-hover;}
+/*-------- H1, H2, P, BUTTONS --------*/
+body {.font-stack; h1, p, h2 {margin: @margin1;} .button-stack;}
 figure.buy button {margin-bottom: 5%;}
 
 
@@ -218,8 +207,8 @@ footer {.footer; margin-top: 0;}
 		grid-template-columns: 1fr;
 
         #description-box { 
-            padding: @padding-2;
-            width: 68%;
+    		padding: @padding-0;
+            width: 69%;
             margin: @margin;  
 		}
 	} 
