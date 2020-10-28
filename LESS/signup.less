@@ -64,7 +64,12 @@ header {.header;}
 
 
 /*-------- H1, H2, P, BUTTONS --------*/
-body {.font-stack; h1, p, h2 {margin: @margin1;} .button-stack;}
+body {
+	font-family: @default-font-stack;
+	.font-stack; 
+	h1, p, h2 {margin: @margin1;} 
+	.button-stack;
+}
 
 
 
@@ -134,8 +139,7 @@ main {
 		margin: auto;
 		margin-top: 4%;
 		font-size: @smallRem;
-		.open-sans-serif;
-
+		font-family: @sec-font-family;
 		span {text-decoration: underline; color: @secColor;}	
 	}
 
@@ -191,7 +195,7 @@ main {
 				background-color: @primaryColor;
 				color: @white;
 				font-size: @mediumRem;
-				.open-sans-serif;
+				font-family: @sec-font-family;
 				.uppercase;
 				font-weight: 800;
 				padding: 1.5rem 4.5rem;

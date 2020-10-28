@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-body {.oswald-sans-serif; line-height: 1;}
+body {line-height: 1;}
 
 ol, ul {
 	list-style: none;
@@ -63,7 +63,12 @@ header {.header}
 
 
 /*-------- H1, H2, P, BUTTONS --------*/
-body {.font-stack; h1, p, h2 {margin: @margin1;} .button-stack;}
+body {
+	font-family: @default-font-stack;
+	.font-stack; 
+	h1, p, h2 {margin: @margin1;} 
+	.button-stack;
+}
 
 
 

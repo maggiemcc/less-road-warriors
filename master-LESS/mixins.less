@@ -4,29 +4,29 @@
 	text-align: right;
 	padding: 1rem @padding-2;
 
-	a {font-size: @largestRem; .oswald-sans-serif; color: @white; font-weight: 700; .noDecoration;}	
+	a {font-size: @largestRem; font-family: @primary-font-family; color: @white; font-weight: 700; .noDecoration;}	
 }
 
 
 /*-----  FONT MIXINS ----- */
 .font-stack {
 	h1 {
+		font-family: @primary-font-family;
 		font-size: @largestRem;
-		.oswald-sans-serif;
 		font-weight: 700;
 		.uppercase;
 	}
 
 	h2 {
+		font-family: @primary-font-family;
 		font-size: @largeRem;
-		.oswald-sans-serif;
 		font-weight: 500;
 		text-transform: none;
 	}
 
 	p {
+		font-family: @sec-font-family;
 		font-size: @smallRem;
-		.open-sans-serif;
 		font-weight: 400;
 		line-height: 1.8rem;
 	}
@@ -39,7 +39,7 @@
 	background-color: @primaryColor;
 	color: @white;
 	font-size: @mediumRem;
-	.open-sans-serif;
+	font-family: @sec-font-family;
 	.uppercase;
 	font-weight: 800;
 	padding: 1.5rem 4.5rem;
@@ -61,7 +61,7 @@
 .no-padding-margin {padding: @padding-0; margin: @margin;}
 .noDecoration {text-decoration: none;}
 .uppercase {text-transform: uppercase;}
-.figcaption {font-size: @smallRem; .open-sans-serif; text-align: center; padding-top: .8rem;}
+.figcaption {font-size: @smallRem; font-family: @sec-font-family; text-align: center; padding-top: .8rem;}
 
 
 .main-div-links {
@@ -150,7 +150,7 @@
 .tabletNav {
 	.nav-basics;
 	li {float: left; width: 25%; .no-padding-margin;}
-	a, .main-logo a{padding: 1.2rem @padding-2;}
+	a, .main-logo a {padding: 1.2rem @padding-2;}
 	.main-logo a img {height: @full-size;}
 }
 

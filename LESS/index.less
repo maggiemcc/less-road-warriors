@@ -64,7 +64,11 @@ html {font-size: 62.5%;}
 header {.header;}
 
 /*-------- H1, H2, P, BUTTONS --------*/
-body {.font-stack; h1,p,h2 {margin: @margin1;} .button-stack;}
+body {
+  font-family: @default-font-stack;
+  .font-stack; 
+  h1,p,h2 {margin: @margin1;} 
+  .button-stack;}
 
 .offers button, .insurance button {
   background-color: @thirdColor;
@@ -85,7 +89,7 @@ main figure.hero {
 
 /*--------MAIN DIV BIKE OPTION LINKS --------*/
 main div#links {
-  .oswald-sans-serif;
+  font-family: @primary-font-family;
   font-weight: 500;
   a:hover {color: @secColor;}
   a:last-child {border-right: none;}
