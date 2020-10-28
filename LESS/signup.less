@@ -55,9 +55,7 @@ table {
 /*------ Start your code here: ------*/
 @import "/css/styles.css";
 
-html {
-	font-size: 62.5%;
-}
+html {font-size: 62.5%;}
 
 .container {.container-mixin;}
 
@@ -83,7 +81,7 @@ main {
 	h3 {color: @black; margin-top: 4%; padding-bottom: @padding-1; padding-left: @padding-1; font-size: @mediumRem;}
 
     .content{
-        width: 55%;
+        width: 50%;
         margin: @margin;
 		padding: @padding-2;
 		
@@ -128,10 +126,7 @@ main {
         #year {margin-right: 0;}
     }
 
-
-    ::placeholder {
-        color: @gray;
-    }
+    ::placeholder {color: @gray;}
     }
 
 
@@ -141,10 +136,7 @@ main {
 		font-size: @smallRem;
 		.open-sans-serif;
 
-		span {
-			text-decoration: underline;
-			color: @secColor;
-		}	
+		span {text-decoration: underline; color: @secColor;}	
 	}
 
 	.terms {
@@ -178,13 +170,9 @@ main {
 		border-radius: 5px;
 	  }
 
-	  .terms:hover input ~ .checkmark {
-		background-color: @fourthColor;
-	  }
+	  .terms:hover input ~ .checkmark {background-color: @fourthColor;}
 
-	  .terms input:checked ~ .checkmark {
-		background-color: @secColor;
-	  }
+	  .terms input:checked ~ .checkmark {background-color: @secColor;}
 
 		.terms input:checked ~ .checkmark:after {
 			content: "✓";
@@ -210,11 +198,7 @@ main {
 				margin-top: 1.3rem;
 			}
 
-			.userbutton:hover {
-				background-color: @secColor;
-				color:@white;
-				cursor: pointer;
-			}
+			.userbutton:hover {background-color: @secColor; color:@white; cursor: pointer;}
 		}
 }
 
@@ -236,7 +220,6 @@ footer {.footer; margin-top: 0;}
 }
 
 
-
 /*---------------------Tablet ---------------------*/
 @media @max769 {
     @media @min501 {
@@ -246,9 +229,8 @@ footer {.footer; margin-top: 0;}
     
 
 /*------ MAIN ------*/
-    main .content{width: 90%;}
+    main .content{width: 80%;}
 	
-
 /*------ FOOTER ------*/
 	footer {.tablet-footer}
 }
@@ -267,7 +249,6 @@ footer {.footer; margin-top: 0;}
             width: 90%;
 
             .input{
-
                 #email, #fName, #lName {width: 96.7%;}
             }
 

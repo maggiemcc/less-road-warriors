@@ -7,7 +7,8 @@
 	a {font-size: @largestRem; .oswald-sans-serif; color: @white; font-weight: 700; .noDecoration;}	
 }
 
-/*-----  TEXT MIXINS ----- */
+
+/*-----  FONT MIXINS ----- */
 .font-stack {
 	h1 {
 		font-size: @largestRem;
@@ -30,6 +31,7 @@
 		line-height: 1.8rem;
 	}
 }
+
 
 /*-----  BUTTON MIXINS ----- */
 
@@ -54,11 +56,9 @@
 }
 
 
-
-
 /*-----  MAIN MIXINS ----- */
 .container-mixin {font-size: @largeRem; max-width: 800px; margin: @margin;}
-.no-padding-margin {padding: 0; margin: 0;}
+.no-padding-margin {padding: @padding-0; margin: @margin;}
 .noDecoration {text-decoration: none;}
 .uppercase {text-transform: uppercase;}
 .figcaption {font-size: @smallRem; .open-sans-serif; text-align: center; padding-top: .8rem;}
@@ -81,16 +81,15 @@
 }
 
 
-
 .gridContainer {
-	padding: 2%;
+	padding: @padding-2;
 	contain: content;
 	display: grid;
 	grid-gap: 20px;
 }
 
 .inlineBlock {
-	padding: 2%;
+	padding: @padding-2;
 	contain: content;
 	display: inline-block;
 	grid-gap: 20px;
@@ -111,102 +110,70 @@
 }
 
 
-/*-----  NAV MIXINS ----- */
 
-.desktopNav {
+/*-----  NAVIGATION MIXINS ----- */
+.nav-basics {
 	background-color: @thirdColor;
 	text-align: center;
 	.no-padding-margin;
 	list-style-type: none;
-	contain: content;
-
-	li {display: inline-block; .no-padding-margin;}
-	ul {.no-padding-margin;}
-	
-	a{
-		color: @black;
-		font-size: @largeRem;
-		font-weight: 400;
-		.noDecoration;
-		display: block;
-		text-align: center;
-		padding: 1.4rem 0;
-		width: 120px;
-		height: 30px;
-	}
-
-	.main-logo a img {height: 90%; .no-padding-margin; vertical-align: middle;}
-	#active a {color: @white; background-color: @secColor;}
-	a:hover {background-color: @secColor; color: @white; font-weight: 500; height: 30px;}
 	border-bottom: 2px solid @primaryColor;
-}
-
-.tabletNav {
-	background-color: @thirdColor;
-	text-align: center;
-	.no-padding-margin;
-	list-style-type: none;
-
 	ul {.no-padding-margin;}
-	li {float: left; width: 25%; .no-padding-margin;}
 
-	a, .main-logo a{
-		background-color: @thirdColor;
+	a, .main-logo a {
 		color: @black;
+		background-color: @thirdColor;
 		font-size: @largeRem;
 		font-weight: 400;
 		.noDecoration;
-		height: 30px;
 		display: block;
-		padding: 1.2rem @padding-2;
 		text-align: center;
+		height: 30px;
 	}
 
-	.main-logo a img {height: @full-size;}
-	#active a {background-color: @secColor; @color: @white;}
-	a:hover {background-color: @secColor; color: @white; font-weight: 500;}	
-	border-bottom: 2px solid @primaryColor;	
-}
-
-.mobileNav {
-	background-color: @thirdColor;
-	.no-padding-margin;
-	list-style-type: none;
-
-	ul {.no-padding-margin;}
-	li {float: left; width: 50%; .no-padding-margin;}
-
-	a, .main-logo a{
-		background-color: @thirdColor;
-		color: @black;
-		font-size: @largeRem;
-		.noDecoration;
-		height: 30px;
-		display: block;
-		padding: 1.2rem @padding-2;
-		text-align: center;
-		font-weight: 400;
-	}
-
-	.main-logo a img {height: @full-size;}
 	#active a {background-color: @secColor; color: @white;}
 	a:hover {background-color: @secColor; color: @white; font-weight: 500;}
-	border-bottom: 2px solid @primaryColor;
 }
 
 
-/*-----  FOOTER MIXINS ----- */
+/*-----  desktop ----- */
+.desktopNav {
+	.nav-basics;
+	contain: content;
+	li {display: inline-block; .no-padding-margin;}
+	a {padding: 1.4rem 0;width: 120px;}
+	.main-logo a img {height: 90%; .no-padding-margin; vertical-align: middle;}
+	a:hover {height: 30px;}
+}
 
-// TABLET
+/*-----  tablet ----- */
+.tabletNav {
+	.nav-basics;
+	li {float: left; width: 25%; .no-padding-margin;}
+	a, .main-logo a{padding: 1.2rem @padding-2;}
+	.main-logo a img {height: @full-size;}
+}
+
+/*-----  mobile ----- */
+.mobileNav {
+	.nav-basics;
+	li {float: left; width: 50%; .no-padding-margin;}
+	a, .main-logo a {padding: 1.2rem @padding-2;}
+	.main-logo a img {height: @full-size;}
+}
+
+
+/*----- FOOTER MIXINS ----- */
+/*----- tablet ----- */
 .tablet-footer {
 	#support, #about, #financing {
 		.inlineBlock;
 		grid-template-columns: auto;
 		line-height: 3.5rem;
-		}
+	}
 }
 
-// MOBILE
+/*----- mobile ----- */
 .mobile-footer {
 	#support, #about, #financing {
 		padding: @padding-2 4%;
@@ -219,32 +186,27 @@
 	}	
 }
 
+
+
+/*----- footer ----- */
 .footer {
     color: @white;
 	background-color: @black;
 	font-size: @mediumRem;
-
 	text-align: center;
 	justify-content: center;
-	padding: 1rem 2%;
+	padding: 1rem @padding-2;
 	margin-top: 1.5rem;
 
-	.email button, h3 {
-		display: inline-block;
-		vertical-align: middle;
-	}
-
+	.email button, h3 {display: inline-block; vertical-align: middle;}
 	.email h2 {color: @secColor; font-size: @largestRem;}
 	.email h3 {color: @white; font-size: @largeRem;}
 
 
-	#ftOptionContainer {
-		padding: 0;
-		margin: 0;
-	}
+	#ftOptionContainer {padding: @padding-0; margin: @margin;}
 	
 	#support, #about, #financing {
-		padding: 0 5%;
+		padding: @padding-0 5%;
 		display: inline-block;
 		grid-template-columns: 8ch auto;
 		line-height: 3.5rem;
@@ -253,11 +215,10 @@
 		a {
 			color: @white;
 			font-weight: 300;
-		
 			text-decoration: none;
 			display: block;
-			margin: 0;
-			padding: 0;
+			margin: @margin;
+			padding: @padding-0;
 		}
 
 		a:hover {text-decoration: underline;}
@@ -265,7 +226,6 @@
 	
 	#links {
 		color: @white;
-	
 		text-align: center;
 		text-decoration: none;
 
@@ -273,10 +233,9 @@
 			color: @white;
 			border-right: 1px solid @thirdColor;
 			font-weight: 300;
-		
 			display: inline-block;
 			text-decoration: none;
-			padding: 1rem 2%;
+			padding: 1rem @padding-2;
 		}
 
 		a:hover {text-decoration: underline;}
@@ -284,7 +243,6 @@
 
 		hr {
 			background-color: @gray;
-			
 			height: 1px;
 			border: none;
 			margin: 2% 0;
