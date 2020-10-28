@@ -80,6 +80,7 @@
 	}
 }
 
+/*-----  Grid, Block, and Flex Mixins ----- */
 
 .gridContainer {
 	padding: @padding-2;
@@ -112,6 +113,7 @@
 
 
 /*-----  NAVIGATION MIXINS ----- */
+/*--- included in all --- */
 .nav-basics {
 	background-color: @thirdColor;
 	text-align: center;
@@ -163,6 +165,8 @@
 }
 
 
+
+
 /*----- FOOTER MIXINS ----- */
 /*----- tablet ----- */
 .tablet-footer {
@@ -181,7 +185,7 @@
 		display: block;
 		line-height: 3.5rem;
 
-		#about h3,  #financing h3 {padding-top: .5rem;}
+		#about h3, #financing h3 {padding-top: .5rem;}
 		div#links a {padding: 4% 1.5rem;}
 	}	
 }
@@ -245,9 +249,9 @@
 			background-color: @gray;
 			height: 1px;
 			border: none;
-			margin: 2% 0;
+			margin: 2% @margin;
 		}
 
-		p {padding: .5rem 0;}
+		p {padding: .5rem @padding-0;}
 	}
 };

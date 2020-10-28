@@ -32,12 +32,8 @@ footer, header, hgroup, menu, nav, section {
 
 body {line-height: 1;}
 
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -80,14 +76,13 @@ main {
         margin: @margin;
         padding: @padding-2;
         padding: 5%;
-    
         h3 {color: @black; margin-top: 4%; padding-bottom: @padding-1; padding-left: @padding-1; font-size: @mediumRem;}
 	}
 }
 
 
 /*-------- FOOTER --------*/
-footer {.footer; margin-top: 0;}
+footer {.footer; margin-top: @margin;}
 
 
 

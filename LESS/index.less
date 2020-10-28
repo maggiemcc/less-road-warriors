@@ -30,16 +30,9 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 
-body {
-	line-height: 1;
-}
-
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
@@ -63,12 +56,13 @@ html {font-size: 62.5%;}
 /*-------------- HEADER --------------*/
 header {.header;}
 
-/*-------- H1, H2, P, BUTTONS --------*/
+/*------ TEXT, BUTTONS ------*/
 body {
   font-family: @default-font-stack;
   .font-stack; 
   h1,p,h2 {margin: @margin1;} 
-  .button-stack;}
+  .button-stack;
+}
 
 .offers button, .insurance button {
   background-color: @thirdColor;
@@ -77,8 +71,8 @@ body {
 }
 
 .offers button, h2, .insurance button {display: inline-block; vertical-align: middle;}
-
 figure.bikes button, figure.buy button {margin-bottom: 5%;}
+
 
 /*-------------- MAIN --------------*/
 main figure.hero {
