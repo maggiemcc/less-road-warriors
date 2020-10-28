@@ -3,8 +3,8 @@
     Road Warriors: https://mm-less-road-warriors.netlify.app/index.html
 
 - site replicating:https://www.harley-davidson.com/us/en/index.html
-    - pages replicating:
-    (from first project - updated) Landing: https://www.harley-davidson.com/us/en/index.html,
+    - pages:
+    (from first project - LESS updated) Landing: https://www.harley-davidson.com/us/en/index.html,
     (new) Bikes: https://www.harley-davidson.com/us/en/products/bikes.html,
     (new) Sign up: https://www.harley-davidson.com/us/en/tools/email-subscribe-global.html,
     (new) Thank you page
